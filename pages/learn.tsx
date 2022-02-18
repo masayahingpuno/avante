@@ -34,7 +34,7 @@ export default function Learn({ questionlist }) {
                       <div className="rounded-lg border-t-2 bg-neutral-200 hover:bg-main_yellow hover:opacity-75 active:bg-main_yellow active:opacity-100">
                         <button
                           onClick={answerHandler}
-                          className="p-2 text-left text-sm font-bold text-neutral-600 hover:text-neutral-800"
+                          className="w-full p-2 text-left text-sm font-bold text-neutral-600 hover:text-neutral-800"
                         >
                           <p>{choice}</p>
                         </button>
