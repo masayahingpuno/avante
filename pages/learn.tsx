@@ -36,9 +36,7 @@ export default function Learn({ questionlist }) {
                           onClick={answerHandler}
                           className="p-2 text-left text-sm font-bold text-neutral-600 hover:text-neutral-800"
                         >
-                          <div key={question.key}>
-                            <p>{choice}</p>
-                          </div>
+                          <p>{choice}</p>
                         </button>
                       </div>
                     </div>
