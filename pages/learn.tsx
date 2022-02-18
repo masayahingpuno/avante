@@ -50,9 +50,8 @@ export default function Learn({ questionlist }) {
                   rationale_show ? "visible" : "hidden"
                 }`}
               >
-                <p className="text-lg text-neutral-800 subpixel-antialiased	">
-                  {question.key}
-                </p>
+                {/* return only the rationale for the questions*/}
+                <p className="text-lg text-neutral-800">{question.rationale}</p>
               </div>
             </div>
           </div>

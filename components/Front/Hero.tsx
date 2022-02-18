@@ -5,27 +5,27 @@ export default function Example() {
     <div className="bg-white">
       <div className="relative overflow-hidden">
         <main>
-          <div className="pt-10 bg-main_black sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
+          <div className="bg-neutral-800 pt-10 sm:pt-16 lg:overflow-hidden lg:pt-8 lg:pb-14">
             <div className="mx-auto max-w-7xl lg:px-8">
               <div className="lg:grid lg:grid-cols-2 lg:gap-8">
-                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:flex lg:items-center lg:px-0 lg:text-left">
                   <div className="lg:py-24">
                     <a
                       href="#"
-                      className="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200"
+                      className="inline-flex items-center rounded-full bg-black p-1 pr-2 text-white hover:text-gray-200 sm:text-base lg:text-sm xl:text-base"
                     >
-                      <span className="px-3 py-0.5 text-white text-xs font-semibold leading-5 uppercase tracking-wide bg-gradient-to-r from-main_red to-main_yellow rounded-full">
+                      <span className="rounded-full bg-gradient-to-r from-main_red to-main_yellow px-3 py-0.5 text-xs font-semibold uppercase leading-5 tracking-wide text-white">
                         Demo Application
                       </span>
                       <span className="ml-4 text-sm"></span>
                       <ChevronRightIcon
-                        className="ml-2 w-5 h-5 text-gray-500"
+                        className="ml-2 h-5 w-5 text-gray-500"
                         aria-hidden="true"
                       />
                     </a>
-                    <h1 className="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                    <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
                       <span className="block">Empowering Education with</span>
-                      <span className="pb-3 block bg-clip-text text-transparent bg-gradient-to-r from-main_red to-main_yellow sm:pb-5">
+                      <span className="block bg-gradient-to-r from-main_red to-main_yellow bg-clip-text pb-3 text-transparent sm:pb-5">
                         Artificial Intelligence
                       </span>
                     </h1>
@@ -37,7 +37,7 @@ export default function Example() {
                     <div className="mt-10 sm:mt-12">
                       <form
                         action="#"
-                        className="sm:max-w-xl sm:mx-auto lg:mx-0"
+                        className="sm:mx-auto sm:max-w-xl lg:mx-0"
                       >
                         <div className="sm:flex">
                           <div className="min-w-0 flex-1">
@@ -48,13 +48,13 @@ export default function Example() {
                               id="email"
                               type="email"
                               placeholder="Enter your email"
-                              className="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                              className="block w-full rounded-md border-0 px-4 py-3 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                             />
                           </div>
                           <div className="mt-3 sm:mt-0 sm:ml-3">
                             <button
                               type="submit"
-                              className="block w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-main_red to-main_yellow text-white font-medium hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 focus:ring-offset-gray-900"
+                              className="block w-full rounded-md bg-gradient-to-r from-main_red to-main_yellow py-3 px-4 font-medium text-white shadow hover:from-teal-600 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:ring-offset-2 focus:ring-offset-gray-900"
                             >
                               Start free trial
                             </button>
@@ -68,7 +68,7 @@ export default function Example() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-12 -mb-16 sm:-mb-48 lg:m-0 lg:relative">
+                <div className="mt-12 -mb-16 sm:-mb-48 lg:relative lg:m-0">
                   <div className="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 lg:max-w-none lg:px-0">
                     {/* Illustration taken from Lucid Illustrations: https://lucid.pixsellz.io/ */}
                     <img
