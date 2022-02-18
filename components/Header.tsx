@@ -1,123 +1,246 @@
-import { Fragment } from "react";
-import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, XIcon } from "@heroicons/react/outline";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-//import logo from "/logo.svg";
-import Image from "next/image";
+import Dropdown from "./utils/Dropdown";
 
-const navigation = [
-  { name: "Features", href: "/features" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "Blog", href: "/blog" },
-  { name: "Contact", href: "/Contact" },
-];
+function Header() {
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-export default function Header() {
+  const trigger = useRef(null);
+  const mobileNav = useRef(null);
+
+  // close the mobile menu on click outside
+  useEffect(() => {
+    const clickHandler = ({ target }) => {
+      if (!mobileNav.current || !trigger.current) return;
+      if (
+        !mobileNavOpen ||
+        mobileNav.current.contains(target) ||
+        trigger.current.contains(target)
+      )
+        return;
+      setMobileNavOpen(false);
+    };
+    document.addEventListener("click", clickHandler);
+    return () => document.removeEventListener("click", clickHandler);
+  });
+
+  // close the mobile menu if the esc key is pressed
+  useEffect(() => {
+    const keyHandler = ({ keyCode }) => {
+      if (!mobileNavOpen || keyCode !== 27) return;
+      setMobileNavOpen(false);
+    };
+    document.addEventListener("keydown", keyHandler);
+    return () => document.removeEventListener("keydown", keyHandler);
+  });
+
   return (
-    <Popover as="header" className="relative">
-      <div className="bg-neutral-800 pt-6">
-        <nav
-          className="relative max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6"
-          aria-label="Global"
-        >
-          <div className="flex items-center flex-1">
-            <div className="flex items-center justify-between w-full md:w-auto">
-              <a href="#">
-                <span className="sr-only">Workflow</span>
-                <Image src="/logo.png" alt="Logo" width={95} height={75} />
+    <header className="absolute z-30 w-full">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+        <div className="flex h-20 items-center justify-between">
+          {/* Site branding */}
+          <div className="mr-4 flex-shrink-0">
+            {/* Logo */}
+            <Link href="/">
+              <a className="block" aria-label="Cruip">
+                <svg
+                  className="h-8 w-8 fill-current text-purple-600"
+                  viewBox="0 0 32 32"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M31.952 14.751a260.51 260.51 0 00-4.359-4.407C23.932 6.734 20.16 3.182 16.171 0c1.634.017 3.21.28 4.692.751 3.487 3.114 6.846 6.398 10.163 9.737.493 1.346.811 2.776.926 4.262zm-1.388 7.883c-2.496-2.597-5.051-5.12-7.737-7.471-3.706-3.246-10.693-9.81-15.736-7.418-4.552 2.158-4.717 10.543-4.96 16.238A15.926 15.926 0 010 16C0 9.799 3.528 4.421 8.686 1.766c1.82.593 3.593 1.675 5.038 2.587 6.569 4.14 12.29 9.71 17.792 15.57-.237.94-.557 1.846-.952 2.711zm-4.505 5.81a56.161 56.161 0 00-1.007-.823c-2.574-2.054-6.087-4.805-9.394-4.044-3.022.695-4.264 4.267-4.97 7.52a15.945 15.945 0 01-3.665-1.85c.366-3.242.89-6.675 2.405-9.364 2.315-4.107 6.287-3.072 9.613-1.132 3.36 1.96 6.417 4.572 9.313 7.417a16.097 16.097 0 01-2.295 2.275z" />
+                </svg>
               </a>
-              <div className="-mr-2 flex items-center md:hidden">
-                <Popover.Button className="bg-gray-900 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-800 focus:outline-none focus:ring-2 focus-ring-inset focus:ring-white">
-                  <span className="sr-only">Open main menu</span>
-                  <MenuIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
-              </div>
-            </div>
+            </Link>
+          </div>
 
-            {/* Map the navigation variable using the Link  */}
-            <div className="hidden space-x-8 md:flex md:ml-10">
-              {navigation.map((item) => (
-                <Link href={item.href} key={item.name}>
-                  <a className="font-medium text-gray-300 hover:text-gray-500 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out">
-                    {item.name}
+          {/* Desktop navigation */}
+          <nav className="hidden md:flex md:flex-grow">
+            {/* Desktop menu links */}
+            <ul className="flex flex-grow flex-wrap items-center justify-end">
+              <li>
+                <Link href="/features">
+                  <a className='className="text-gray-300 ease-in-out"> flex items-center px-4 py-2 transition duration-150 hover:text-gray-200'>
+                    Features
                   </a>
                 </Link>
-              ))}
-            </div>
-          </div>
-          <div className="hidden md:flex md:items-center md:space-x-6">
-            <a
-              href="#"
-              className="text-base font-medium text-white hover:text-gray-300"
-            >
-              Log in
-            </a>
-            <a
-              href="#"
-              className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-gray-600 hover:bg-gray-700"
-            >
-              Create your Account
-            </a>
-          </div>
-        </nav>
-      </div>
-
-      <Transition
-        as={Fragment}
-        enter="duration-150 ease-out"
-        enterFrom="opacity-0 scale-95"
-        enterTo="opacity-100 scale-100"
-        leave="duration-100 ease-in"
-        leaveFrom="opacity-100 scale-100"
-        leaveTo="opacity-0 scale-95"
-      >
-        <Popover.Panel
-          focus
-          className="absolute top-0 inset-x-0 p-2 transition transform origin-top md:hidden"
-        >
-          <div className="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
-            <div className="px-5 pt-4 flex items-center justify-between">
-              <div>
-              <Image src="/logo.png" alt="Logo" width={95} height={75} />
-              </div>
-              <div className="-mr-2">
-                <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cyan-600">
-                  <span className="sr-only">Close menu</span>
-                  <XIcon className="h-6 w-6" aria-hidden="true" />
-                </Popover.Button>
-              </div>
-            </div>
-            <div className="pt-5 pb-6">
-              {/* Map using link */}
-              <div className="px-2 space-y-1">
-                {navigation.map((item) => (
-                  <Link href={item.href} key={item.name}>
-                    <a className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">
-                      {item.name}
+              </li>
+              <li>
+                <Link href="/pricing">
+                  <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                    Pricing
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog">
+                  <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                    Blog
+                  </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/pricing">
+                  <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                    About Us
+                  </a>
+                </Link>
+              </li>
+              {/* 1st level: hover */}
+              <Dropdown title="Support">
+                {/* 2nd level: hover */}
+                <li>
+                  <Link href="/contact">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Contact us
                     </a>
                   </Link>
-                ))}
-              </div>
-              <div className="mt-6 px-5">
-                <a
-                  href="#"
-                  className="block text-center w-full py-3 px-4 rounded-md shadow bg-gradient-to-r from-teal-500 to-cyan-600 text-white font-medium hover:from-teal-600 hover:to-cyan-700"
-                >
-                  Start free trial
-                </a>
-              </div>
-              <div className="mt-6 px-5">
-                <p className="text-center text-base font-medium text-gray-500">
-                  Existing customer?{" "}
-                  <a href="#" className="text-gray-900 hover:underline">
-                    Login
+                </li>
+                <li>
+                  <Link href="/help">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Help Center
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/404">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      404
+                    </a>
+                  </Link>
+                </li>
+              </Dropdown>
+            </ul>
+
+            {/* Desktop sign in links */}
+            <ul className="flex flex-grow flex-wrap items-center justify-end">
+              <li>
+                <Link href="/sigin">
+                  <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                    Sign In
                   </a>
-                </p>
-              </div>
-            </div>
+                </Link>
+              </li>
+              <li>
+                <Link href="/signup">
+                  <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                    Sign up
+                  </a>
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* Mobile menu */}
+          <div className="md:hidden">
+            {/* Hamburger button */}
+            <button
+              ref={trigger}
+              className={`hamburger ${mobileNavOpen && "active"}`}
+              aria-controls="mobile-nav"
+              aria-expanded={mobileNavOpen}
+              onClick={() => setMobileNavOpen(!mobileNavOpen)}
+            >
+              <span className="sr-only">Menu</span>
+              <svg
+                className="h-6 w-6 fill-current text-gray-300 transition duration-150 ease-in-out hover:text-gray-200"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect y="4" width="24" height="2" rx="1" />
+                <rect y="11" width="24" height="2" rx="1" />
+                <rect y="18" width="24" height="2" rx="1" />
+              </svg>
+            </button>
+
+            {/*Mobile navigation */}
+            <nav
+              id="mobile-nav"
+              ref={mobileNav}
+              className="absolute top-full left-0 z-20 w-full overflow-hidden px-4 transition-all duration-300 ease-in-out sm:px-6"
+              style={
+                mobileNavOpen
+                  ? { maxHeight: mobileNav.current.scrollHeight, opacity: 1 }
+                  : { maxHeight: 0, opacity: 0.8 }
+              }
+            >
+              <ul className="bg-gray-800 px-4 py-2">
+                <li>
+                  <Link href="/features">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Features
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/pricing">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Pricing
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/blog">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Blog
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      About Us
+                    </a>
+                  </Link>
+                </li>
+                <li className="my-2 border-t border-b border-gray-700 py-2">
+                  <span className="flex py-2 text-gray-300">Support</span>
+                  <ul className="pl-4">
+                    <li>
+                      <Link href="/contact">
+                        <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                          Contact Us
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/help">
+                        <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                          Help Center
+                        </a>
+                      </Link>
+                    </li>
+                    <li>
+                      <Link href="/404">
+                        <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                          404
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                </li>
+                <li>
+                  <Link href="/signin">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Signin
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/signup">
+                    <a className="flex items-center px-4 py-2 text-gray-300 transition duration-150 ease-in-out hover:text-gray-200">
+                      Sign up
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
           </div>
-        </Popover.Panel>
-      </Transition>
-    </Popover>
+        </div>
+      </div>
+    </header>
   );
 }
+
+export default Header;
