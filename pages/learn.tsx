@@ -10,8 +10,8 @@ export default function Learn({ questionlist }) {
   }
   return (
     <div className="h-screen w-screen snap-y snap-mandatory overflow-scroll scrollbar-hide">
-      {questionlist.map((question) => (
-        <div key={question.key}>
+      {questionlist.map((question, key) => (
+        <div key={key}>
           {/* TITLE */}
           <div className="container mx-auto mt-8  snap-start border-2 lg:w-1/3">
             <h1 className="pl-6 pt-8 text-left font-mono text-2xl font-bold">
@@ -51,7 +51,7 @@ export default function Learn({ questionlist }) {
                 }`}
               >
                 <p className="text-lg text-neutral-800 subpixel-antialiased	">
-                  {question.rationle}
+                  {question.key}
                 </p>
               </div>
             </div>
