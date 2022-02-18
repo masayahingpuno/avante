@@ -30,7 +30,7 @@ export default function Learn({ questionlist }) {
               <div className=" m-4 border-t-2 pt-4">
                 <div className="m-4 flex flex-col gap-2">
                   {question.choices.map((choice) => (
-                    <div key={question.key}>
+                    <div key={Math.random()}>
                       <div className="rounded-lg border-t-2 bg-neutral-200 hover:bg-main_yellow hover:opacity-75 active:bg-main_yellow active:opacity-100">
                         <button
                           onClick={answerHandler}
@@ -51,7 +51,7 @@ export default function Learn({ questionlist }) {
                 }`}
               >
                 <p className="text-lg text-neutral-800 subpixel-antialiased	">
-                  {question.rationale}
+                  {question.rationle}
                 </p>
               </div>
             </div>
