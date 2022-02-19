@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout.tsx";
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>

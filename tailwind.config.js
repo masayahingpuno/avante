@@ -10,8 +10,8 @@ module.exports = {
         main_yellow: "#efcf10",
         main_black: "#000000",
       },
-      font: {
-        main: ["poppins", "sans-serif"],
+      fontFamily: {
+        main: ["Lato"],
       },
     },
   },
