@@ -37,6 +37,13 @@ function Feature() {
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
           </p>
         </div>
+        <div className="font-main">
+          <h1 className="text-lg font-bold">Gamification</h1>
+          <p className="mt-4 text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          </p>
+        </div>
       </div>
     </div>
   );
