@@ -11,7 +11,7 @@ module.exports = {
         main_black: "#000000",
       },
       fontFamily: {
-        main: ["Lato"],
+        main: ["Lato", "sans-serif"],
       },
     },
   },
