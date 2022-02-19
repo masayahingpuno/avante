@@ -9,7 +9,7 @@ function Hero() {
         </h1>
       </div>
       <div className="pt-10 md:w-2/3">
-        <p className="px-4 font-main text-xl tracking-wider text-slate-600	text-center">
+        <p className="px-4 font-main text-lg tracking-wider text-slate-600	text-center">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut

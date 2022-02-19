@@ -4,7 +4,7 @@ import Header from "./Header";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-slate-100">
+    <div className="bg-slate-200">
       <Header />
       {children}
     </div>
