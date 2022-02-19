@@ -4,7 +4,7 @@ import Image from "next/image";
 function Header() {
   return (
     <div>
-      <div className="container pt-8 mx-auto flex h-14 w-screen justify-between bg-slate-200">
+      <div className="container mx-auto flex h-14 w-screen justify-between bg-slate-100 pt-8">
         <div className="flex items-center justify-end md:w-1/3 md:justify-start">
           <div className="p-2 pl-6 md:p-2">
             <Image
@@ -19,11 +19,11 @@ function Header() {
             agham ai
           </div>
         </div>
-        <div className="hidden w-full items-center justify-end gap-6 font-semibold font-main text-black md:flex subpixel-antialiased">
-          <div className="">Features</div>
-          <div className="">Demo</div>
+        <div className="hidden w-full items-center justify-end gap-6 font-main font-semibold text-black subpixel-antialiased md:flex">
+          <div className="">Home</div>
           <div className="">Blog</div>
-          <div className="">Contact us</div>
+          <div className="">Contact Us</div>
+          <div className="">About Us</div>
         </div>
       </div>
     </div>

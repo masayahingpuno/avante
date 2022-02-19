@@ -1,12 +1,14 @@
-import React from 'react'
-import Hero from '../components/Front/Hero'
-import Feature from '../components/Front/Feature'
+import React from "react";
+import Hero from "../components/Front/Hero";
+import Feature from "../components/Front/Feature";
+import Testimonial from "../components/Front/Testimonial";
 
 export default function index() {
   return (
     <div>
-        <Hero />
-        <Feature />
+      <Hero />
+      <Feature />
+      <Testimonial />
     </div>
-  )
+  );
 }
