@@ -1,6 +1,7 @@
 import React from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import TextError from "../components/contact/TextError";
 
 const initialValues = {
   name: "",
@@ -34,9 +35,8 @@ function Contact() {
         initialValues={initialValues}
         onSubmit={onSubmit}
         validationSchema={validationSchema}
-        className="flex w-full flex-col items-start justify-start pl-4"
       >
-        <Form className="mr-4 flex flex-col gap-4">
+        <Form className="flex w-screen px-6 md:w-1/2 flex-col gap-4">
           {/* Name */}
           <div>
             <label htmlFor="name">Name</label>
@@ -45,7 +45,7 @@ function Contact() {
               type="text"
               name="name"
             />
-            <ErrorMessage name="name" />
+            <ErrorMessage name="name" component={TextError} />
           </div>
           {/* Email */}
           <div className="">
@@ -55,7 +55,7 @@ function Contact() {
               type="email"
               name="email"
             />
-            <ErrorMessage name="email" />
+            <ErrorMessage name="email" component={TextError} />
           </div>
           <div className="">
             {/* Organization */}
@@ -65,7 +65,7 @@ function Contact() {
               type="text"
               name="organization"
             />
-            <ErrorMessage name="organization" />
+            <ErrorMessage name="organization" component={TextError} />
           </div>
 
           <div className="">
@@ -77,7 +77,7 @@ function Contact() {
               type="text"
               name="message"
             />
-            <ErrorMessage name="message" />
+            <ErrorMessage name="message" component={TextError} />
           </div>
 
           <button
