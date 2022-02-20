@@ -36,7 +36,7 @@ function Contact() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="flex w-screen px-6 md:w-1/2 flex-col gap-4">
+        <Form className="flex w-screen flex-col gap-4 px-6 md:w-1/2">
           {/* Name */}
           <div>
             <label htmlFor="name">Name</label>

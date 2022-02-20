@@ -9,7 +9,7 @@ function Hero() {
         </h1>
       </div>
       <div className="pt-10 md:w-2/3">
-        <p className="px-4 font-main text-lg tracking-wider text-slate-600	text-center">
+        <p className="px-4 text-center font-main text-lg tracking-wider	text-slate-600">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -19,7 +19,7 @@ function Hero() {
           culpa qui officia deserunt mollit anim id est laborum.
         </p>
       </div>
-      <div className="mx-6 mt-6 w-3/4 md:w-1/6 hover:bg-slate-800 rounded-lg bg-black p-4 text-center">
+      <div className="mx-6 mt-6 w-3/4 rounded-lg bg-black p-4 text-center hover:bg-slate-800 md:w-1/6">
         <button className="w-full font-main font-bold text-slate-100">
           Demo Application
         </button>
