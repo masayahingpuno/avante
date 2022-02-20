@@ -5,7 +5,7 @@ import Totop from "./Totop";
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-slate-100">
+    <div>
       <Header />
       {children}
       <Totop />

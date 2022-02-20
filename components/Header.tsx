@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <div>
-      <div className="container mx-auto flex h-14 w-screen justify-between bg-slate-100 pt-8 text-gray-900 subpixel-antialiased">
+      <div className="container mx-auto flex h-14 w-screen justify-between  pt-8 text-gray-900 subpixel-antialiased">
         <Link href="/">
           <a className="flex items-center justify-end md:w-1/4 md:justify-start">
             <div className="p-2 pl-6 md:p-2">
