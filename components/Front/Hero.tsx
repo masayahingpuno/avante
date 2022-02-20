@@ -2,7 +2,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center">
+    <div className="container mx-auto flex flex-col items-center justify-center ">
       <div className="px-2 pt-24">
         <h1 className="font-main_bold text-center text-5xl font-bold tracking-tighter text-black subpixel-antialiased	">
           Empowering education with Artificial Intelligence

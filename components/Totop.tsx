@@ -9,7 +9,7 @@ function Totop() {
       <button onClick={() => window.scrollTo(0, 0)}>
         <FontAwesomeIcon
           icon={faChevronUp}
-          className="m-4 rounded-full border-2 border-gray-900  bg-main_yellow p-2 font-black text-main_red opacity-75 hover:opacity-100 md:p-4"
+          className="m-4 rounded-full border-2 border-gray-900  bg-gradient-to-r from-main_red to-main_yellow p-2 font-black hover:opacity-75 md:p-4"
         />
       </button>
     </div>
