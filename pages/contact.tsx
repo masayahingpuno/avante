@@ -25,8 +25,10 @@ function Contact() {
   return (
     <div className="container mx-auto  flex flex-col items-center justify-evenly bg-slate-100 pt-24 md:flex-row ">
       <div className="pb-10 font-main md:w-full">
-        <div className="pl-4 text-3xl font-bold">Get in touch</div>
-        <div className="pl-4 text-lg text-zinc-600 md:w-2/3">
+        <div className="pl-4 text-5xl font-bold text-gray-900">
+          Get in touch
+        </div>
+        <div className="pl-4 pt-10 text-lg text-gray-500 md:w-2/3">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
         </div>
@@ -36,7 +38,7 @@ function Contact() {
         onSubmit={onSubmit}
         validationSchema={validationSchema}
       >
-        <Form className="flex w-screen flex-col gap-4 px-6 md:w-1/2">
+        <Form className="flex w-screen flex-col gap-4 px-6 font-bold text-gray-800 md:w-1/2">
           {/* Name */}
           <div>
             <label htmlFor="name">Name</label>
@@ -81,7 +83,7 @@ function Contact() {
           </div>
 
           <button
-            className="mt-10 w-full rounded-lg border-2 bg-black p-2 font-main text-white hover:bg-slate-800"
+            className="mt-10 w-full rounded-lg border-2 bg-black p-2 font-main font-bold text-gray-100  hover:bg-slate-800"
             type="submit"
           >
             Submit

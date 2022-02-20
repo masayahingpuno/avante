@@ -3,12 +3,12 @@ import Image from "next/image";
 
 function about() {
   return (
-    <div className="container mx-auto px-4 pt-16 font-main text-zinc-800 subpixel-antialiased">
+    <div className="container mx-auto px-4 pt-16 font-main subpixel-antialiased">
       <div className="md:w-3/4">
-        <h1 className="pt-2 text-3xl font-bold md:text-4xl">
+        <h1 className="pt-2 text-3xl font-bold text-gray-800 md:text-4xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         </h1>
-        <p className="pt-4 md:text-lg">
+        <p className="pt-4 text-gray-500 md:text-lg">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -42,8 +42,8 @@ function about() {
 
       <div className="md:flex">
         <div className="pt-20 md:flex md:w-1/2 md:flex-col">
-          <h1 className="text-3xl font-bold">Our Story</h1>
-          <p className="pt-4">
+          <h1 className="text-3xl font-bold text-gray-800">Our Story</h1>
+          <p className="pt-4 text-gray-500">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
