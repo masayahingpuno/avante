@@ -1,10 +1,7 @@
-import react from "react";
-import { questions } from "./api/question";
+import React from "react";
 
-function Big() {
-  return <div>
-    <h1>Big</h1>
-  </div>;
+function big() {
+  return <div>big</div>;
 }
 
-export default Big;
+export default big;
