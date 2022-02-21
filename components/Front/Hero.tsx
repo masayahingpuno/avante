@@ -3,13 +3,13 @@ import React from "react";
 function Hero() {
   return (
     <div className="container mx-auto flex flex-col items-center justify-center ">
-      <div className="px-2 pt-24">
+      <div className="prose px-2 pt-24">
         <h1 className="font-main_bold text-center text-5xl font-bold tracking-tighter text-gray-800 subpixel-antialiased	">
           Empowering education with Artificial Intelligence
         </h1>
       </div>
-      <div className="pt-10 md:w-2/3">
-        <p className="px-4 text-center font-main text-lg tracking-wider	text-gray-500">
+      <div className="prose pt-10 md:w-2/3">
+        <p className="px-4 text-center font-main text-lg 	text-gray-500">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
