@@ -4,7 +4,7 @@ import Image from "next/image";
 function about() {
   return (
     <div className="container mx-auto px-4 pt-16 font-main subpixel-antialiased">
-      <div className="md:w-3/4">
+      <div className="prose md:w-3/4">
         <h1 className="pt-2 text-3xl font-bold text-gray-800 md:text-4xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
         </h1>
@@ -41,7 +41,7 @@ function about() {
       </div>
 
       <div className="md:flex">
-        <div className="pt-20 md:flex md:w-1/2 md:flex-col">
+        <div className="prose pt-20 md:flex md:w-1/2 md:flex-col">
           <h1 className="text-3xl font-bold text-gray-800">Our Story</h1>
           <p className="pt-4 text-gray-500">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

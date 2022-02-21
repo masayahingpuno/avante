@@ -20,7 +20,7 @@ function Testimonial() {
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       </div>
       <div className="">
-        <div className="container flex w-full snap-y snap-mandatory flex-col items-stretch justify-between  overflow-x-auto md:flex-row	 md:flex-wrap">
+        <div className="container flex w-full  flex-col items-stretch justify-between  overflow-x-auto md:flex-row	 md:flex-wrap">
           <div className="snap-center">
             <TestimonialCard />
           </div>
@@ -29,24 +29,41 @@ function Testimonial() {
           </div>
           <div className="snap-center">
             <TestimonialCard />
+          </div>
+        </div>
+      </div>
+      <div className="container relative w-screen">
+        <div className="flex w-full  flex-col justify-center  overflow-x-auto md:flex-row md:flex-wrap">
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+          <div>
+            <TestimonialCard />
+          </div>
+        </div>
+        <div className="absolute bottom-20 flex h-40 w-full justify-center bg-gradient-to-t from-white">
+          <div className="">
+            <button
+              onClick={seeMoreHandler}
+              className={`${
+                showMore ? "hidden" : "visible"
+              }    rounded-xl bg-black  px-8 py-4 font-bold text-white hover:bg-gray-700`}
+            >
+              See More...
+            </button>
           </div>
         </div>
         <div
           className={`${
             showMore ? "visible" : "hidden"
-          }    container flex w-full snap-y snap-mandatory flex-col items-stretch justify-between  overflow-x-auto md:flex-row	 md:flex-wrap`}
+          }    flex w-full  flex-col justify-center  overflow-x-auto md:flex-row md:flex-wrap`}
         >
           <TestimonialData />
         </div>
       </div>
-      <button
-        onClick={seeMoreHandler}
-        className={`${
-          showMore ? "hidden" : "visible"
-        }   rounded-lg bg-black py-4 px-6 font-bold text-white hover:bg-gray-700`}
-      >
-        See More...
-      </button>
     </div>
   );
 }
