@@ -2,7 +2,7 @@ import React from "react";
 
 function Feature() {
   return (
-    <div className="container mx-auto flex flex-col items-center justify-center px-4 pt-24 font-main subpixel-antialiased">
+    <div className="container m-12 mx-auto flex flex-col items-center justify-center border-t-2 border-gray-200 px-4 pt-12 font-main subpixel-antialiased">
       <div className="text-5xl font-bold text-gray-900">Features</div>
       <div className="text-md pt-4  text-gray-500">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
