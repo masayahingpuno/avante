@@ -44,7 +44,11 @@ function Testimonial() {
             <TestimonialCard />
           </div>
         </div>
-        <div className="absolute bottom-20 flex h-40 w-full justify-center bg-gradient-to-t from-white">
+        <div
+          className={`absolute bottom-16 flex h-40 w-full justify-center ${
+            showMore ? null : " bg-gradient-to-t from-white"
+          }`}
+        >
           <div className="">
             <button
               onClick={seeMoreHandler}
