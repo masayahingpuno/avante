@@ -4,7 +4,7 @@ import Image from "next/image";
 function TestimonialCard() {
   return (
     <div>
-      <div className="my-20 max-w-md rounded-lg bg-white py-4 px-8 shadow-lg">
+      <div className="my-14 max-w-md rounded-lg bg-white py-4 px-8 shadow-lg">
         <div className="-mt-16 flex h-20 w-20 justify-center rounded-full border-2 border-main_red object-cover md:justify-end">
           <Image src="/logo.png" height={75} alt="person_1" width={95} />
         </div>

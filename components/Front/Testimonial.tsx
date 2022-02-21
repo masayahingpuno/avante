@@ -21,13 +21,13 @@ function Testimonial() {
       </div>
       <div className="">
         <div className="container flex w-full  flex-col items-stretch justify-between  overflow-x-auto md:flex-row	 md:flex-wrap">
-          <div className="snap-center">
+          <div>
             <TestimonialCard />
           </div>
-          <div className="snap-center">
+          <div>
             <TestimonialCard />
           </div>
-          <div className="snap-center">
+          <div>
             <TestimonialCard />
           </div>
         </div>
