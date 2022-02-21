@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "./Header";
-//import Footer from './Footer'
+import Footer from "./Footer";
 import Totop from "./Totop";
 
 export default function Layout({ children }) {
@@ -9,6 +9,7 @@ export default function Layout({ children }) {
       <Header />
       {children}
       <Totop />
+      <Footer />
     </div>
   );
 }
