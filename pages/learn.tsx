@@ -1,6 +1,7 @@
 import React from "react";
 import { questions } from "./api/question";
 import { useState } from "react";
+import NavBar from "../components/Learn/NavBar";
 
 export default function Learn({ questionlist }) {
   const [rationale_show, setRationale_show] = useState(false);
@@ -57,6 +58,7 @@ export default function Learn({ questionlist }) {
                 {question.rationale}
               </p>
             </div>
+            <NavBar />
           </div>
         </div>
       ))}
@@ -73,9 +75,5 @@ export const getStaticProps = async () => {
 };
 
 Learn.getLayout = function PageLayout(page) {
-  return (
-    <>
-    {page}
-    </>
-  )
-}
+  return <>{page}</>;
+};

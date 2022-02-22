@@ -26,7 +26,7 @@ function Contact() {
   return (
     <>
       <Head>
-        <title>Contact agham ai</title>
+        <title>agham ai contact</title>
         <meta name="description" content="all about ai" />
       </Head>
       <div className="container mx-auto  flex flex-col items-center justify-evenly bg-slate-100 pt-24 md:flex-row ">
