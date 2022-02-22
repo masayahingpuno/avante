@@ -45,7 +45,7 @@ function Testimonial() {
           </div>
         </div>
         <div
-          className={`absolute bottom-16 flex h-40 w-full justify-center ${
+          className={`absolute bottom-10 flex h-40 w-full justify-center ${
             showMore ? null : " bg-gradient-to-t from-white"
           }`}
         >
@@ -54,7 +54,7 @@ function Testimonial() {
               onClick={seeMoreHandler}
               className={`${
                 showMore ? "hidden" : "visible"
-              }    rounded-xl bg-black  px-8 py-4 font-bold text-white hover:bg-gray-700`}
+              }    rounded-xl bg-black  px-6 py-4 font-bold text-white hover:bg-gray-700`}
             >
               See More...
             </button>

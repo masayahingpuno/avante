@@ -8,51 +8,56 @@ export default function Learn({ questionlist }) {
   function answerHandler(e) {
     setRationale_show(true);
   }
+
   return (
-    <div className="h-screen w-screen snap-y snap-mandatory overflow-scroll scrollbar-hide">
+    <div className="static mt-4 h-screen w-screen snap-y snap-mandatory overflow-scroll font-main subpixel-antialiased scrollbar-hide">
       {questionlist.map((question, key) => (
-        <div key={key}>
+        <div
+          className="container relative mx-auto snap-start snap-always border-2  md:h-screen md:w-1/3 "
+          key={key}
+        >
           {/* TITLE */}
-          <div className="container mx-auto mt-8  snap-start border-2 lg:w-1/3">
-            <h1 className="pl-6 pt-8 text-left font-mono text-2xl font-bold">
+          <div className="pt-6">
+            <h1 className="pl-6  text-left text-2xl font-bold text-gray-900">
               {question.topic}
             </h1>
-
-            {/* QUESTION */}
-            <div className="flex flex-col gap-4">
-              <div className="m-4 border-t-2 pt-4">
-                <div className="text-lg text-neutral-800 subpixel-antialiased">
-                  <p>{question.question}</p>
-                </div>
+          </div>
+          {/* QUESTION */}
+          <div className="flex flex-col gap-4">
+            <div className="m-4 border-t-2 pt-4">
+              <div className="text-lg text-gray-800 subpixel-antialiased">
+                <p>{question.question}</p>
               </div>
+            </div>
 
-              {/* Choices */}
-              <div className=" m-4 border-t-2 pt-4">
-                <div className="m-4 flex flex-col gap-2">
-                  {question.choices.map((choice) => (
-                    <div key={Math.random()}>
-                      <div className="rounded-lg border-t-2 bg-neutral-200 hover:bg-main_yellow hover:opacity-75 active:bg-main_yellow active:opacity-100">
-                        <button
-                          onClick={answerHandler}
-                          className="w-full p-2 text-left text-sm font-bold text-neutral-600 hover:text-neutral-800"
-                        >
-                          <p>{choice}</p>
-                        </button>
-                      </div>
+            {/* Choices */}
+            <div className=" m-4 border-t-2 pt-4">
+              <div className="m-4 flex flex-col gap-2">
+                {question.choices.map((choice) => (
+                  <div key={Math.random()}>
+                    <div className="rounded-lg border-t-2  ">
+                      <button
+                        onClick={answerHandler}
+                        className="w-full rounded-xl border-2 border-gray-900 p-2 text-left text-sm font-bold text-gray-800 hover:bg-gray-400 "
+                      >
+                        <p>{choice}</p>
+                      </button>
                     </div>
-                  ))}
-                </div>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {/* Rationale*/}
-              <div
-                className={`m-4 border-t-2 pt-4 ${
-                  rationale_show ? "visible" : "hidden"
-                }`}
-              >
-                {/* return only the rationale for the questions*/}
-                <p className="text-lg text-neutral-800">{question.rationale}</p>
-              </div>
+            {/* Rationale*/}
+            <div
+              className={`m-4 border-t-2 pt-4 ${
+                rationale_show ? "visible" : "hidden"
+              }`}
+            >
+              <p className="text-lg text-neutral-800">
+                {/* // Filter the rationale with the current key */}
+                {question.rationale}
+              </p>
             </div>
           </div>
         </div>
