@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import Head from "next/head";
 
 export default function index() {
   return (
-    <div>index</div>
-  )
+    <div>
+      <Head>
+        <title>agham ai blog</title>
+        <meta name="description" content="all about ai" />
+      </Head>
+    </div>
+  );
 }
