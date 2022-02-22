@@ -18,10 +18,10 @@ function Error() {
 
       <div className="w-full px-6 ">
         <div className="pt-10 text-xl font-bold md:text-4xl">
-          Looks like you've found the doorway to the great nothing
+          Looks like you&apos;ve found the doorway to the great nothing
         </div>
         <div className="pt-6 md:pt-10 md:text-xl">
-          The content you’re looking for doesn’t exist. Either it was removed,
+          The content you&apos;re looking for doesn&apos;t exist. Either it was removed,
           or you mistyped the link.
         </div>
         <div className="pt-6 md:pt-10 md:text-xl">
